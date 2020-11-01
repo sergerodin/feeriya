@@ -144,7 +144,7 @@ function images() {
 };
 
 
-const build = gulp.series(clean, gulp.parallel(styles, views, images));
+const build = gulp.series(clean, gulp.parallel(styles, provideData(views), images));
 
 const server = () => {
     browserSync.init({
