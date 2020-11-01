@@ -1,0 +1,48 @@
+doctype html
+html.no-js(lang="")
+    - var TEST_URL = '';
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+        block pageTitle
+            title Всё для праздников в Ялте
+        meta(name="description" content="")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+
+        link(rel="stylesheet" href= TEST_URL + "/assets/css/style.css?v3")
+
+        script(type="text/javascript").
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            ym(57659644, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+            });
+        noscript
+            div
+                img(src="https://mc.yandex.ru/watch/57659644" style="position:absolute; left:-9999px;" alt="")
+
+    body
+        header.site-header.container.pt-4.pb-5
+            .justify-content-md-between.row
+                a(href="/").site-header__logo
+                    img(src= TEST_URL + '/assets/img/feeriya-logo.png')
+                .site-header__contacts
+                  .site-header__contacts-tel.pt-4
+                    a(href='tel:+79788422498') +7 978 842-24-98
+                    a(href='tel:+79789022373') +7 978 902-23-73
+                  span.site-header__contacts-time с 10 до 23 БЕЗ ВЫХОДНЫХ 
+
+        block content
+
+        footer.site-footer.container
+            h2(style="line-height:0") Доставка по Ялте в течении дня!
+            p
+            | Ялта (Ливадия — Массандра) до 20:00 без оплаты при заказе от 3000 рублей, после 20:00 — 300 руб.
+            br
+            | Доставка по Крыму — 20 руб./км.
+        
+        script(type="text/javascript", src="https://user-agent.cc/cdn/uainit.js?code=623_4Jmv7Bta6GYy")

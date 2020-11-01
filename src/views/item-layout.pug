@@ -1,0 +1,17 @@
+extend master.pug
+
+block pageTitle
+    title= 'Happy Yalta / ' + locals.section + ' / ' + locals.title + ' — ' + locals.price + 'руб.'
+
+block content
+  .container
+    .row
+      .col-sm-12.col-md-6
+        img(src= locals.img).item_page__img.img-fluid
+      .col-sm-12.col-md-6
+        h1= locals.title
+        p= locals.description
+        p.item_page__price= locals.price 
+          |  руб
+        if (locals.youtube !== 0)
+          | <iframe width="560" height="315" src="https://www.youtube.com/embed/#{locals.youtube}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

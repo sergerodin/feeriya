@@ -1,0 +1,17 @@
+mixin itemCards(item)
+  .col-md-6.col-lg-4
+    .item-card
+      .item-card__contents
+        a.item-card__contents-link(href= '/' + item.section_slug + '/' + item.item_slug)
+          img.item-card__contents-img(src= item.img)
+          p.item-card__contents-title= item.title
+          p= item.description
+          p.item-card__contents-price #{item.price} руб
+          if (item.youtube !== 0)
+            .initplayer(id = item.youtube) Посмотреть в действии
+      
+
+mixin sectionGate(section)
+  a(href = '/' + section.slug).sections-nav__item.col-sm-12.col-md
+    img(src= section.img, alt= section.title)
+

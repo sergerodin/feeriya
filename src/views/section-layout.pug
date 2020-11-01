@@ -1,0 +1,12 @@
+extend master
+include mixins
+
+block pageTitle
+	title Всё для праздников: #{locals.title} в Крыму
+
+block content
+	.container
+		.row
+			h1.col-12= locals.title
+			each item in locals.items
+				+itemCards(item)

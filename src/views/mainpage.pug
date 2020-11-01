@@ -1,0 +1,56 @@
+extend master.pug
+include mixins
+
+
+block content
+  .container
+      nav.row.sections-nav.align-items-end
+        each section in locals["Разделы"]
+          +sectionGate(section)
+
+  .container
+    .row.pt-5
+      each item in locals["Товары"]
+        +itemCards(item)
+
+
+  script(type="text/javascript").
+    var vidbuttons = document.getElementsByClassName("initplayer")
+    
+    for (var i=0, len=vidbuttons.length|0; i<len; i=i+1|0) {
+        vidbuttons[i].addEventListener("click", function(event) {
+          buildVideoFrame(this.id);
+          event.preventDefault();
+          return false; 
+        }, true);
+    }
+
+    function buildVideoFrame(vidId) {
+        var vidContainer = document.createElement("div");
+        vidContainer.setAttribute("id", "vidContainer");
+        document.body.appendChild(vidContainer);
+        var closeBtn = document.createElement('div');
+        closeBtn.setAttribute("id", "closeVidContainer");
+        var ifrm = document.createElement("iframe");
+        var vUrl = "https://www.youtube.com/embed/"+vidId
+        ifrm.setAttribute("src", vUrl);
+        ifrm.setAttribute("frameborder", "0");
+        ifrm.setAttribute("allow", "autoplay");
+        ifrm.setAttribute("allowfullscreen", true);
+        ifrm.style.width = "70%";
+        ifrm.style.height = "70%";
+        vidContainer.appendChild(ifrm);
+        vidContainer.appendChild(closeBtn);
+        vidContainer.className = 'vidOpened';
+    
+        return closeBtn.onclick = function(event) {
+          event.preventDefault();
+          document.getElementById("vidContainer").remove();
+          return false; 
+        };
+    };
+
+//- timing:
+//- 33.5 hours
+//- 
+//- Kimchen23!
