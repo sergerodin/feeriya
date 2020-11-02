@@ -10,8 +10,9 @@ block content
 
   .container
     .row.pt-5
-      each item in locals["Товары"]
-        +itemCards(item)
+      if (locals["Разделы"].filter( function(i){return i.title == "Салюты"}).length > 0)
+        each item in locals["Товары"]
+          +itemCards(item)
 
 
   script(type="text/javascript").

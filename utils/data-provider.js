@@ -83,5 +83,4 @@ function provideData(callback) {
   return gspreadshits(spreadShitID, sheetsIndex, gspreadshitsCb, {}, callback);
 };
 
-
 module.exports = provideData;
