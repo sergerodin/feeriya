@@ -176,7 +176,7 @@ const dev = gulp.series(clean,
 
 
 function buildPages() {
-  provideData(views);
+  return provideData(views);
 };
 
 exports.buildPages = buildPages;
