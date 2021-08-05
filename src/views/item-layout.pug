@@ -11,8 +11,10 @@ block content
       .col-sm-12.col-md-6
         h1= locals.title
         p= locals.description
-        if (locals.show === 'да') p.item_page__price= locals.price 
-            |  руб
-        else p.item_page__price= locals.show 
+        if (locals.show === 'да') 
+          p.item_page__price= locals.price 
+            | руб
+        else 
+          p.item_page__price= locals.show 
         if (locals.youtube !== 0)
           | <iframe width="560" height="315" src="https://www.youtube.com/embed/#{locals.youtube}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
