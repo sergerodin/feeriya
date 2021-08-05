@@ -6,7 +6,12 @@ mixin itemCards(item)
           img.item-card__contents-img(src= item.img)
           p.item-card__contents-title= item.title
           p= item.description
-          p.item-card__contents-price #{item.price} руб
+          
+          if (item.show === 'да')
+            p.item-card__contents-price #{item.price} руб
+          else if
+            p.item-card__contents-price #{item.show} руб
+          
           if (item.youtube !== 0)
             .initplayer(id = item.youtube) Посмотреть в действии
       
